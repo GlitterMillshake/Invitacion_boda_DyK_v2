@@ -93,7 +93,7 @@ export function ContactFooter() {
             className="text-[#D4AF37] mt-4 italic"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            ¡Estamos ansiosos por celebrar con vosotros!
+            ¡Estamos ansiosos por celebrar juntos!
           </p>
         </div>
       </div>
