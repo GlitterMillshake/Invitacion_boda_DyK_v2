@@ -12,19 +12,44 @@ export function Home() {
   const [isVideoActive, setIsVideoActive] = useState(false);
 
   return (
-    <div className="flex flex-col">
+    <main className="relative min-h-screen">
+      {/* =====================================================
+          HERO
+          ===================================================== */}
+
       <HeroSection onOpen={() => setIsMusicPlaying(true)} />
 
-      <MusicPlayer
-        isPlaying={isMusicPlaying}
-        setIsPlaying={setIsMusicPlaying}
-        isVideoActive={isVideoActive}
-      />
-      <PhotoGallery onVideoStateChange={(active) => setIsVideoActive(active)} />
-      <Timeline />
-      <EventLocation />
-      <Gifts />
-      <RSVPForm />
-    </div>
+      {/* =====================================================
+          RESTO DE LA INVITACIÓN
+          ===================================================== */}
+
+      <div
+        className="relative min-h-full bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/assets/bg_inv.jpg')",
+          backgroundAttachment: "scroll",
+        }}
+      >
+        <div className="relative z-10">
+          <MusicPlayer
+            isPlaying={isMusicPlaying}
+            setIsPlaying={setIsMusicPlaying}
+            isVideoActive={isVideoActive}
+          />
+
+          <PhotoGallery
+            onVideoStateChange={(active) => setIsVideoActive(active)}
+          />
+
+          <Timeline />
+
+          <EventLocation />
+
+          <Gifts />
+
+          <RSVPForm />
+        </div>
+      </div>
+    </main>
   );
 }

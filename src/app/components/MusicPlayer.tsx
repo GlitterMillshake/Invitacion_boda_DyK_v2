@@ -33,7 +33,7 @@ export function MusicPlayer({ isVideoActive, isPlaying, setIsPlaying }: MusicPla
     <div className="fixed bottom-6 left-6 z-100">
       <audio 
         ref={audioRef} 
-        src="/JVKE - golden hour (instrumental).mp3" 
+        src="/pov - (instrumental).mp3" 
         onEnded={() => setIsPlaying(false)} 
       />
       <button onClick={togglePlay} className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-xl border border-[#D4AF37] hover:scale-105 transition-all">

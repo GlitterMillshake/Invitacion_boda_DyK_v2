@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Check, Search, AlertCircle } from "lucide-react";
 import { supabase } from "../../supabaseClient";
+import { motion } from "motion/react";
 
 export function RSVPForm() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -89,51 +90,53 @@ export function RSVPForm() {
   };
 
   return (
-    <section
-      id="rsvp"
-      className="relative py-24 px-6 bg-[#FAF7F5]/90 overflow-hidden"
-    >
+    <section id="rsvp" className="relative py-24 px-6 overflow-hidden">
       <img
-        src="/assets/flowers (7).png"
+        src="/assets/Flores_sup.svg"
         alt=""
-        className={`absolute top-0 left-0 pointer-events-none transition-all duration-1000 ease-in-out z-0
-          w-60 sm:w-60 md:w-80 lg:w-100`}
-      />
-
-      <img
-        src="/assets/flowers (6).png"
-        alt=""
-        className={`absolute bottom-0 right-0 pointer-events-none transition-all duration-1000 ease-in-out z-0
-          w-60 sm:w-60 md:w-80 lg:w-100`}
+        aria-hidden="true"
+        className=" pointer-events-none absolute
+    left-1/2 top-0
+    z-9
+    w-[150%] max-w-full
+    -translate-x-1/2
+    translate-y-[-15%]
+  "
       />
 
       <div className="relative max-w-2xl mx-auto z-10 bg-white rounded-2xl shadow-2xl p-10 border border-[#E8E0DB]">
         <div className="text-center mb-12">
-          <h2
-            className="text-4xl md:text-5xl mb-4 text-[#6B1D36]"
-            style={{ fontFamily: "var(--font-serif)" }}
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="mb-4 font-serif text-4xl text-[#6B1D36] md:text-5xl"
           >
-            Confirmar Asistencia
-          </h2>
-          <div className="w-24 h-0.5 bg-[#D4AF37] mx-auto mb-4"></div>
-          <p
-            className="text-[#6B5B52]"
-            style={{ fontFamily: "var(--font-sans)" }}
-          >
-            Por favor, responda antes del 15 de Junio de 2026
-          </p>
-          <div className="mt-5 text-center rounded-2xl bg-[#6B1D36]/80 p-3">
-          <p
-            className="text-sm italic text-white"
-            style={{ fontFamily: "var(--font-sans)" }}
-          >
-            Para su mayor comodidad y disfrute, hemos reservado este evento
-            exclusivamente para adultos.
-          </p>
-        </div>
-        </div>
+            Confirmación
+          </motion.h2>
 
-        
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+          >
+            <img
+              src="/assets/Separador.svg"
+              alt=""
+              className="mx-auto my-[1%] h-[clamp(20px,4vw,20px)] w-auto object-contain"
+            />
+          </motion.div>
+          <div className="mt-5 text-center rounded-2xl bg-[#6B1D36]/90 p-3">
+            <p
+              className="text-sm text-white"
+              style={{ fontFamily: "var(--font-sans)" }}
+            >
+              Por favor, responda antes del 10 de Diciembre de 2026
+            </p>
+          </div>
+        </div>
 
         {submitted ? (
           <div className="bg-[#FAF7F5] rounded-lg p-12 text-center border border-[#D4AF37] animate-fade-in">
