@@ -11,7 +11,7 @@ const events = [
     icon: Church,
   },
   {
-    time: "18:30",
+    time: "18:00",
     title: "Recepción de Invitados",
     description: "Bienvenida al salón y música ambiental en Salón Finnestra.",
     icon: GlassWater,
@@ -23,7 +23,7 @@ const events = [
     icon: Utensils,
   },
   {
-    time: "21:30",
+    time: "21:00",
     title: "Fiesta",
     description: "Celebración, baile y momentos para recordar.",
     icon: Music,

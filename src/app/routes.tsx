@@ -1,6 +1,9 @@
 import { createBrowserRouter } from "react-router";
+
 import { Layout } from "./components/Layout";
 import { Home } from "./components/Home";
+import { AdminLogin } from "../admin/AdminLogin";
+import { AdminPanel } from "../admin/AdminPanel";
 
 export const router = createBrowserRouter([
   {
@@ -13,8 +16,21 @@ export const router = createBrowserRouter([
       },
       {
         path: "*",
-        Component: Home, // Redirect all to home in one-page app
-      }
+        Component: Home,
+      },
     ],
+  },
+
+  // ==============================
+  // ADMINISTRACIÓN
+  // ==============================
+
+  {
+    path: "/admin/login",
+    Component: AdminLogin,
+  },
+  {
+    path: "/admin",
+    Component: AdminPanel,
   },
 ]);
